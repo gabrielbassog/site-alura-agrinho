@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades do Agrinho</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .atividade {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Atividades do Agrinho</h1>
+
+    <div id="atividadesContainer">
+        <!-- Aqui as atividades serão inseridas dinamicamente -->
+    </div>
+
+    <script>
+        // Definindo atividades (poderiam ser mais de uma)
+        let atividadeAgrinho = {
+            titulo: "Plantio de Árvores",
+            descricao: "Vamos plantar árvores para ajudar o meio ambiente.",
+            data: "10 de agosto de 2024",
+            local: "Parque Municipal",
+            responsavel: "Associação Ambientalista",
+            participantes: ["Roberto", "Maria", "João"]
+        };
+
+        // Função para criar elementos HTML para exibir uma atividade
+        function criarElementoAtividade(atividade) {
+            let atividadeHTML = `
+                <div class="atividade">
+                    <h2>${atividade.titulo}</h2>
+                    <p><strong>Data:</strong> ${atividade.data}</p>
+                    <p><strong>Local:</strong> ${atividade.local}</p>
+                    <p><strong>Responsável:</strong> ${atividade.responsavel}</p>
+                    <p><strong>Participantes:</strong> ${atividade.participantes.join(", ")}</p>
+                    <p>${atividade.descricao}</p>
+                </div>
+            `;
+            return atividadeHTML;
+        }
+
+        // Função para exibir as atividades na página
+        function exibirAtividades() {
+            let container = document.getElementById('atividadesContainer');
+            container.innerHTML = criarElementoAtividade(atividadeAgrinho);
+        }
+
+        // Chamando a função para exibir as atividades
+        exibirAtividades();
+    </script>
+</body>
+</html>
